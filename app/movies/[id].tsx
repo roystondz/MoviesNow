@@ -21,6 +21,10 @@ const MovieDetails = () => {
           <Image source={{
             uri:`https://image.tmdb.org/t/p/w500${movie?.poster_path}` 
           }} className='w-full h-[550px]' resizeMode='cover'/>
+
+          <View className='flex-col items-start justify-center mt-5 px-5 '>
+            <Text className='text-white font-bold text-xl'>{movie?.title}</Text>
+          </View>
         </View>
       </ScrollView>
     </View>
