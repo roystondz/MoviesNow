@@ -34,20 +34,20 @@ export default function Index() {
 
   return (
     <View className="flex-1 bg-primary">
-      <Image source={images.bg} className="absolute w-full z-0"/>
+      <Image source={images.bg} className="absolute z-0 w-full"/>
       <ScrollView className="flex-1 px-5" showsVerticalScrollIndicator={false} contentContainerStyle={
       {
         minHeight:"100%",
         paddingBottom:10
       }
       }>
-        <Image  source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto  "/>
+        <Image  source={icons.logo} className="w-12 h-10 mx-auto mt-20 mb-5 "/>
         {
           moviesLoading?(
             <ActivityIndicator
               size="large"
               color="#0000ff"
-              className="mt-10 self-center"
+              className="self-center mt-10"
             />
           ):moviesError?(
             <Text>Error:{moviesError.message}</Text>
@@ -61,7 +61,7 @@ export default function Index() {
           />
           {trendingMovies&&(
             <View>
-              <Text className="text-xl text-white mb-3 font-bold">Trending Movies </Text>
+              <Text className="mb-3 text-xl font-bold text-white">Trending Movies </Text>
               <FlatList
                 horizontal
                 
@@ -70,7 +70,7 @@ export default function Index() {
                   //<Text className="text-sm text-white">{item.title}</Text>
                   <TrendingCard movie={item} index={index} />
                 )}
-                className="mb-3 mt-3"
+                className="mt-3 mb-3"
                 keyExtractor={(item)=>item.id.toString()}
                 showsHorizontalScrollIndicator={false}
 
@@ -79,7 +79,7 @@ export default function Index() {
           )}
           <>
 
-          <Text className="text-white font-bold mt-5 mb-3 ">Latest Movies</Text>
+          <Text className="mt-5 mb-3 font-bold text-white ">Latest Movies</Text>
           </>
           <FlatList
           data={movies}
@@ -96,7 +96,7 @@ export default function Index() {
             marginBottom:10,
             paddingRight:5
           }}
-          className="mt-2 pb-32"
+          className="pb-32 mt-2"
           scrollEnabled={false}
           />
         </View>
@@ -105,5 +105,5 @@ export default function Index() {
         
         </ScrollView> 
     </View>
-  );
+  )
 }

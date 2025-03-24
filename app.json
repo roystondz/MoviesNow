@@ -4,16 +4,20 @@
     "slug": "tRPC",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "@/assets/images/icon.png",
+    "icon": "./assets/images/logo.png",
     "scheme": "movies",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.roystondz.tRPC",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.roystondz.tRPC"
@@ -21,7 +25,25 @@
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/icon.png"
+      "favicon": "./assets/images/logo.png",
+      "manifest": {
+        "short_name": "MoviesNow",
+        "display": "standalone",
+        "start_url": ".",
+        "background_color": "#ffffff",
+        "theme_color": "#000000",
+        "description": "Watch your favorite movies now!",
+        "icons": [
+          {
+            "src": "./assets/images/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ]
+      },
+      "serviceWorker": {
+        "src": "service-worker.js"
+      }
     },
     "plugins": [
       "expo-router",

@@ -21,6 +21,6 @@ export default function RootLayout() {
       name="movies/[id]"
       options={{headerShown:false}}
   />
-  </Stack>;
+  </Stack>
   </>
 }
